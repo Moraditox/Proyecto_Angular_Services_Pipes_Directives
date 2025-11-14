@@ -1,0 +1,44 @@
+<article class="ficha-contenedor">
+        <div class="imagen-contenedor">
+            <img appNoImagen [src]="instrumentoInput.urlImage" [alt]="instrumentoInput.fabricante">
+        </div>
+
+        <div class="datos-contenedor">
+            <div class="datos-generales">
+                <div class="nombre-guitarra">
+                    <span class="titular-fabricante">{{instrumentoInput.fabricante}}</span>
+                    <span class="modelo">{{instrumentoInput.modelo}}</span>
+                </div>
+
+                <div class="contenedor-likes">
+                    <app-likes [likes]=instrumentoInput.likes></app-likes>
+                </div>
+
+                <ul class="caracteristicas-principales">
+                    @for(descripcion of instrumentoInput.descripcion; track descripcion) {
+                        <li>{{descripcion}}</li>
+                    }
+                </ul>
+            </div>
+
+            <div class="etiqueta-stock">
+                <p [ngClass]="{
+                    'verde': instrumentoInput.stock > 3, 
+                    'amarillo': instrumentoInput.stock > 0 && instrumentoInput.stock <= 3,
+                    'rojo': instrumentoInput.stock <= 0
+                }">
+                    {{instrumentoInput.stock | stock}}
+                </p>
+            </div>
+        </div>
+
+        <div class="iconos-precio-contenedor">
+            <p class="precio">{{instrumentoInput.precio | euros}}</p>
+
+            <div class="contenedor-iconos">
+                <i class="fa-regular fa-paste"></i>
+                <app-corazon></app-corazon>
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+        </div>
+</article>
