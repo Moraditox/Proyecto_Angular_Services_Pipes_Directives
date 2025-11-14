@@ -1,0 +1,26 @@
+.card-container{
+    height: 20rem;
+    display: grid;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+    background-color: #dddddd;
+    margin: 0.5rem;
+    padding: 1rem;
+}
+
+.img-container img{
+    height: 15rem;
+    border-radius: 2rem;
+    width: 100%;
+}
+
+img{
+    width: 100%;
+}
+
+.name-character h3{
+    text-shadow: 1rem;
+    font-weight: bold;
+}
