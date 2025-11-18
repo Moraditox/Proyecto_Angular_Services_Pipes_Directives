@@ -14,5 +14,5 @@ import { Likes } from '../likes/likes';
   styleUrl: './ficha-instrumento.css',
 })
 export class FichaInstrumento {
-    @Input() instrumentoInput:Instrumentos;
+    @Input() instrumento:Instrumentos;
 }

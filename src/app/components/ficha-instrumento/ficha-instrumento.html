@@ -1,21 +1,21 @@
 <article class="ficha-contenedor">
         <div class="imagen-contenedor">
-            <img appNoImagen [src]="instrumentoInput.urlImage" [alt]="instrumentoInput.fabricante">
+            <img appNoImagen [src]="instrumento.urlImage" [alt]="instrumento.fabricante">
         </div>
 
         <div class="datos-contenedor">
             <div class="datos-generales">
                 <div class="nombre-guitarra">
-                    <span class="titular-fabricante">{{instrumentoInput.fabricante}}</span>
-                    <span class="modelo">{{instrumentoInput.modelo}}</span>
+                    <span class="titular-fabricante">{{instrumento.fabricante}}</span>
+                    <span class="modelo">{{instrumento.modelo}}</span>
                 </div>
 
                 <div class="contenedor-likes">
-                    <app-likes [likes]=instrumentoInput.likes></app-likes>
+                    <app-likes [likes]=instrumento.likes></app-likes>
                 </div>
 
                 <ul class="caracteristicas-principales">
-                    @for(descripcion of instrumentoInput.descripcion; track descripcion) {
+                    @for(descripcion of instrumento.descripcion; track descripcion) {
                         <li>{{descripcion}}</li>
                     }
                 </ul>
@@ -23,17 +23,17 @@
 
             <div class="etiqueta-stock">
                 <p [ngClass]="{
-                    'verde': instrumentoInput.stock > 3, 
-                    'amarillo': instrumentoInput.stock > 0 && instrumentoInput.stock <= 3,
-                    'rojo': instrumentoInput.stock <= 0
+                    'verde': instrumento.stock > 3, 
+                    'amarillo': instrumento.stock > 0 && instrumento.stock <= 3,
+                    'rojo': instrumento.stock <= 0
                 }">
-                    {{instrumentoInput.stock | stock}}
+                    {{instrumento.stock | stock}}
                 </p>
             </div>
         </div>
 
         <div class="iconos-precio-contenedor">
-            <p class="precio">{{instrumentoInput.precio | euros}}</p>
+            <p class="precio">{{instrumento.precio | euros}}</p>
 
             <div class="contenedor-iconos">
                 <i class="fa-regular fa-paste"></i>
